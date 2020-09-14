@@ -22,9 +22,9 @@ function Stores() {
     return (
 
      <div>
-     <h1>Fits Bellow :)</h1>
+     <h1>Fits Bellow</h1>
        {stores.map((store) => (
-					<Store key={store._id} name={store.name} image={store.image} id={store._id} comments={store.comments} location={store.location}/>
+					<Store key={store._id} name={store.name} image={store.image} id={store._id} comments={store.comments} location={store.location} />
 				))}
      </div>
       

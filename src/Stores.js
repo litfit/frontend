@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useLayoutEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { API_URL } from './config.js';
 import axios from 'axios';
 import Store from './Store.js'
@@ -9,7 +9,6 @@ function Stores() {
     useEffect(() => {
       axios.get(API_URL + '/api/stores')
       .then(response => {
-        console.log(response.data);
         setStores(response.data)
   
       })

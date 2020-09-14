@@ -1,5 +1,4 @@
-import { useForm } from 'react-hook-form';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { API_URL } from './config.js';
 import axios from 'axios';
 
@@ -19,8 +18,8 @@ function Submit() {
 	const onSubmit = (e) => {
 		axios
 			.post(API_URL + '/api/stores/new', details)
-			.then((response) => {
-				console.log(response);
+			.then(() => {
+				
 				window.location.reload();
 			})
 			.catch((error) => {

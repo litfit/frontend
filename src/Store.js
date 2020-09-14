@@ -1,13 +1,14 @@
-import React, { Component, useState } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import { API_URL } from './config.js';
-import AddThoughts from './AddThoughts.js'
+import AddThoughts from './AddThoughts.js';
+import Thoughts from './Thoughts.js';
 
 
 function Store(props) {
     const [store, setStore] = useState(props);
 
-    const delStore = (e) => {
+    const delStore = () => {
         axios
 		 .delete(API_URL + '/api/stores/' + props.id)
 		.then((response) => {
@@ -23,7 +24,8 @@ function Store(props) {
 				</button>
 				<section>
 					<h4>Thoughts?</h4>
-					<AddThoughts imageID={props.id} />
+					<AddThoughts storeID={props.id} />
+					<Thoughts comments={props.comments} storeID={props.id} commentsID={props.comments._id}/>
 				</section>
 			</div>
 		);

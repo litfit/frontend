@@ -22,9 +22,13 @@ function Thoughts(props) {
 						<button type='text' onClick={() => deleteComment(comment._id)}>
 							X
 						</button>
+						
 					</p>
+					
 				))}
+				
 			</h4>
+			
 		</div>
 	);
 }

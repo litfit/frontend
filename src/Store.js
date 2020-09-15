@@ -13,6 +13,7 @@ import {
 	CardBody,
 	ListGroup,
 	ListGroupItem,
+	Button
 } from 'react-bootstrap';
 
 function Store(props) {
@@ -28,7 +29,8 @@ function Store(props) {
 			<Row>
 				<Col md={4}>
 					<Card>
-						<CardImg top width='100%' src={props.Image} />
+						<CardImg top width='100%' src={props.image} />
+					    <Button type="submit" onClick={delStore}>Delete</Button>
 						<Card.Body>
 							<Card.Header>Store-Name</Card.Header>
 							<Card.Text>{props.name}</Card.Text>
@@ -36,18 +38,29 @@ function Store(props) {
 							<Card.Text>{props.location}</Card.Text>
 							<Card.Header>Thoughts?</Card.Header>
 							<AddThoughts storeID={props.id} />
-							<ListGroup>
 							<ListGroupItem>
 							<Card.Text>
 							<Thoughts comments={props.comments} storeID={props.id} commentsID={props.comments._id} />
 							</Card.Text>
 							</ListGroupItem>
-							</ListGroup>
 						</Card.Body>
 					</Card>
 				</Col>
 			</Row>
 		</div>
+
+		// <div>
+		// <img src={props.image} alt='pictures of shoes' sizes="14%"/>
+		// <span></span>
+		// <button type='submit' onClick={delStore}>
+		// 	x
+		// </button>
+		// <section>
+		// 	<h4>Thoughts?</h4>
+		// 	<AddThoughts storeID={props.id} />
+		// 	<Thoughts comments={props.comments} storeID={props.id} commentsID={props.comments._id}/>
+		// </section>
+		// </div>
 	);
 }
 
